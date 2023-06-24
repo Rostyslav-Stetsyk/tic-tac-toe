@@ -25,7 +25,7 @@ const cross = `<div class="cross">
   </div>`;
 
 const circle = `<div class="circle">
-    <span class="first-cycle"><span class="second-cycle"></span></span>
+    <span class="first-cycle"></span>
   </div>`;
 
 let player = 'X';
@@ -54,6 +54,7 @@ function onClickPlayBoard(e) {
             playerX.splice(0);
             playerO.splice(0);
             turnRef.textContent = 'X';
+            turnRef.classList.remove('player-o');
             return;
     }
 
@@ -62,9 +63,10 @@ function onClickPlayBoard(e) {
         playerX.push(Number(e.target.dataset.id));
         player = 'O';
         turnRef.textContent = 'O';
+        turnRef.classList.toggle('player-o');
         if (playerX.length >= 3) {
             if (winner(playerX)) {
-                const instance = basicLightbox.create(`<div class='modal'><h2>Player X wins!</h2></div>`);
+                const instance = basicLightbox.create(`<div class='modal'><h2>Player <span class="player-x">X</span> wins!</h2></div>`);
                 playBoardRef.style.pointerEvents = 'none';
                 instance.show();
             }
@@ -74,9 +76,10 @@ function onClickPlayBoard(e) {
         playerO.push(Number(e.target.dataset.id));
         player = 'X';
         turnRef.textContent = 'X';
+        turnRef.classList.toggle('player-o');
         if (playerO.length >= 3) {
             if (winner(playerO)) {
-                const instance = basicLightbox.create(`<div class='modal'><h2>Player O wins!</h2></div>`);
+                const instance = basicLightbox.create(`<div class='modal'><h2>Player <span class="player-o">O</span> wins!</h2></div>`);
                 playBoardRef.style.pointerEvents = 'none';
                 instance.show();
             }
@@ -93,8 +96,4 @@ function onClickPlayBoard(e) {
 function winner(player) {
     const winner = winingSets.some(el => el.every(el => player.includes(el)))
     return winner;
-}
-
-function tie() {
-
 }
