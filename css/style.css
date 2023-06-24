@@ -72,7 +72,6 @@ main {
 .playboard {
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
     width: 30vw;
     height: 30vw;
     margin-top: 30px;
@@ -108,7 +107,6 @@ main {
 .turn {
     margin: auto;
     width: fit-content;
-
     font-size: 24px;
 }
 
@@ -124,7 +122,6 @@ main {
     position: relative;
     justify-content: center;
     align-items: center;
-
     pointer-events: none;
 }
 
@@ -152,7 +149,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-
     pointer-events: none;
 }
 
@@ -195,18 +191,12 @@ main {
     font-size: 60px;
 }
 
+.turn-player.player-o,
 .player-o {
     color: blue;
 }
 
+.turn-player,
 .player-x {
     color: red;
-}
-
-.turn-player {
-    color: red;
-}
-
-.turn-player.player-o {
-    color: blue;
 }
