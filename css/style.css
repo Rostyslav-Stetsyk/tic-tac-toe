@@ -1,0 +1,153 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    height: 100vh;
+    background-image: url('../1674383564_foni-club-p-fon-tetradnii-list-8.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 10vh;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.container,
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.playboard {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 30vw;
+    height: 30vw;
+}
+
+.playboard .box:nth-child(-n + 3) {
+    border-top: none;
+}
+
+.playboard .box:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.playboard .box:nth-child(n + 7) {
+    border-bottom: none;
+}
+
+.playboard .box:nth-child(3n+1) {
+    border-left: none;
+}
+
+.box {
+    border: 1px solid black;
+    width: calc(100%/3);
+    height: calc(100%/3);
+}
+
+.turn {
+    margin: auto;
+    width: fit-content;
+
+    font-size: 24px;
+}
+
+.restart {
+    display: block;
+    margin: 20px auto;
+}
+
+.cross {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+}
+
+.first-line,
+.second-line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 6px;
+    background-color: black;
+}
+
+
+.first-line {
+    transform: rotate(45deg);
+}
+
+.second-line {
+    transform: rotate(315deg);
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+}
+
+.first-cycle {
+    display: block;
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+    border: 6px solid black;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 15px;
+    height: 60px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
