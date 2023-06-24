@@ -48,14 +48,9 @@ function onClickPlayBoard(e) {
         };
     }
 
-        if (e.target.classList.contains('restart')) {
-            createPlayboard();
-            player = 'X';
-            playerX.splice(0);
-            playerO.splice(0);
-            turnRef.textContent = 'X';
-            turnRef.classList.remove('player-o');
-            return;
+    if (e.target.classList.contains('restart')) {
+        restart();
+        return;
     }
 
     if (player === 'X') {
@@ -87,13 +82,27 @@ function onClickPlayBoard(e) {
     }
 
     if (playerO.length + playerX.length === 9 && !winner(playerO) && !winner(playerX)) {
-                        const instance = basicLightbox.create(`<div class='modal'><h2>It's a tie!</h2></div>`);
-                playBoardRef.style.pointerEvents = 'none';
-                instance.show();
+        tie()
     }
 }
 
-function winner(player) {
-    const winner = winingSets.some(el => el.every(el => player.includes(el)))
-    return winner;
+    function winner(player) {
+        const winner = winingSets.some(el => el.every(el => player.includes(el)))
+        return winner;
+    }
+
+
+function tie() {
+    const instance = basicLightbox.create(`<div class='modal'><h2>It's a tie!</h2></div>`);
+    playBoardRef.style.pointerEvents = 'none';
+    instance.show();
+};
+
+function restart() {
+    createPlayboard();
+    player = 'X';
+    playerX.splice(0);
+    playerO.splice(0);
+    turnRef.textContent = 'X';
+    turnRef.classList.remove('player-o');
 }
