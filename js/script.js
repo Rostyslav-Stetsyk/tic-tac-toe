@@ -91,7 +91,6 @@ function winner(player) {
         return winner;
 }
 
-
 function tie() {
     const instance = basicLightbox.create(`<div class='modal'><h2>It's a tie!</h2></div>`);
     playBoardRef.style.pointerEvents = 'none';
