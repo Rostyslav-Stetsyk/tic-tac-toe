@@ -86,10 +86,10 @@ function onClickPlayBoard(e) {
     }
 }
 
-    function winner(player) {
+function winner(player) {
         const winner = winingSets.some(el => el.every(el => player.includes(el)))
         return winner;
-    }
+}
 
 
 function tie() {
