@@ -23,7 +23,7 @@ button {
 body {
     height: 100vh;
 
-    background-image: url('../background-mobile.jpg');
+    background-image: url('../img/background-mobile.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -107,7 +107,7 @@ main {
     padding: 8px;
 
     border: none;
-    background-image: url('../texture_1.jpg');
+    background-image: url('../img/texture_1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -179,7 +179,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    background-image: url('../winner-paper_mobile.png');
+    background-image: url('../img/winner-paper_mobile.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -194,7 +194,7 @@ main {
 
 @media screen and (min-width: 1024px) {
     body {
-        background-image: url('../background-img.jpg');
+        background-image: url('../img/background-img.jpg');
     }
 
     .playboard {
@@ -206,7 +206,7 @@ main {
         display: flex;
         width: 30vw;
         height: 17vw;
-        background-image: url('../winner-paper_desktop.png');
+        background-image: url('../img/winner-paper_desktop.png');
     }
 
     .playboard .box:hover {
