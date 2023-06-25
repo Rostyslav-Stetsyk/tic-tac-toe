@@ -25,7 +25,7 @@ const cross = `<div class="cross">
   </div>`;
 
 const circle = `<div class="circle">
-    <span class="first-cycle"></span>
+    <span class="cycle"></span>
   </div>`;
 
 let player = 'X';

@@ -1,3 +1,5 @@
+/* -------------------------- Reset -------------------------- */
+
 h1,
 h2,
 h3,
@@ -16,12 +18,16 @@ button {
     cursor: pointer;
 }
 
+/* -------------------------- Body and main -------------------------- */
+
 body {
     height: 100vh;
-    background-image: url('../1674383564_foni-club-p-fon-tetradnii-list-8.jpg');
+
+    background-image: url('../background-mobile.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
     font-family: 'Gloria Hallelujah';
 }
 
@@ -31,6 +37,8 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* -------------------------- Title and container -------------------------- */
 
 .container {
     margin-top: 20px;
@@ -43,22 +51,38 @@ main {
     width: fit-content;
 }
 
-.title {
-    padding: 8px;
-}
-
 .turn {
-    padding: 8px;
-
+    margin: auto;
+    width: fit-content;
+    font-size: 24px;
 }
+
+.turn-player.player-o,
+.player-o {
+    color: blue;
+}
+
+.turn-player,
+.player-x {
+    color: red;
+}
+
+/* -------------------------- Playboard -------------------------- */
 
 .playboard {
     display: flex;
     flex-wrap: wrap;
-    width: 30vw;
-    height: 30vw;
+    width: 80vw;
+    height: 80vw;
     margin-top: 30px;
-    transform: rotate(2deg);
+
+    transform: rotate(1deg);
+}
+
+.box {
+    border: 1px solid black;
+    width: calc(100%/3);
+    height: calc(100%/3);
 }
 
 .playboard .box:nth-child(-n + 3) {
@@ -77,25 +101,26 @@ main {
     border-left: none;
 }
 
-.playboard .box:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.box {
-    border: 1px solid black;
-    width: calc(100%/3);
-    height: calc(100%/3);
-}
-
-.turn {
-    margin: auto;
-    width: fit-content;
-    font-size: 24px;
-}
-
 .restart {
     display: block;
     margin: 20px auto;
+    padding: 8px;
+
+    border: none;
+    background-image: url('../texture_1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-size: 26px;
+
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    transition: box-shadow 250ms cubic-bezier(0.075, 0.82, 0.165, 1), transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.restart:hover {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
 }
 
 .cross {
@@ -108,6 +133,8 @@ main {
     pointer-events: none;
 }
 
+/* -------------------------- Cross and Circle -------------------------- */
+
 .first-line,
 .second-line {
     position: absolute;
@@ -116,7 +143,6 @@ main {
     height: 6px;
     background-color: red;
 }
-
 
 .first-line {
     transform: rotate(45deg);
@@ -135,7 +161,7 @@ main {
     pointer-events: none;
 }
 
-.first-cycle {
+.cycle {
     display: block;
     border-radius: 50%;
     width: 90%;
@@ -143,43 +169,47 @@ main {
     border: 6px solid blue;
 }
 
-.restart {
-    padding: 8px;
-    border: none;
-    background-image: url('../texture.jpg');
+/* -------------------------- Modal -------------------------- */
+
+.modal {
+    display: flex;
+    width: 90vw;
+    height: 51vw;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('../winner-paper_mobile.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-size: 26px;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    transition: box-shadow 250ms cubic-bezier(0.075, 0.82, 0.165, 1), transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.restart:hover {
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    transform: scale(1.05);
+.modal h2 {
+    font-size: 38px;
+    text-align: center;
 }
 
-.modal {
-    padding: 12px;
-    background-image: url('../winner-paper.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 80vh;
-    height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
-}
+/** -------------------------- Desktop -------------------------- */
 
-.turn-player.player-o,
-.player-o {
-    color: blue;
-}
+@media screen and (min-width: 1024px) {
+    body {
+        background-image: url('../background-img.jpg');
+    }
 
-.turn-player,
-.player-x {
-    color: red;
+    .playboard {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .modal {
+        display: flex;
+        width: 30vw;
+        height: 17vw;
+        background-image: url('../winner-paper_desktop.png');
+    }
+
+    .playboard .box:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 }
